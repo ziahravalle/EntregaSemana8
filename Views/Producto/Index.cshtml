@@ -12,6 +12,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Shop Homepage - TIENDITA UCHILL</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Buscar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -21,6 +23,7 @@
 </head>
 <body>
     <!-- Navigation-->
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">Start Bootstrap</a>
@@ -46,9 +49,14 @@
                         <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                     </button>
                 </form>
+
             </div>
         </div>
     </nav>
+    <div>
+        <input class="form-control" id="myInput" type="text" placeholder="Ingrese el termino a buscar..." />
+        <button type="button" class="Boton">Buscar   <i class="fas fa-search"></i> <!-- Icono de lupa --></button>
+    </div>
     <!-- Header-->
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -271,3 +279,13 @@
     <script src="~/js/scripts1.js"></script>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
