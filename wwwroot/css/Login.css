@@ -20,8 +20,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /*tamaño*/
-    background: #203e7e;
+    background: linear-gradient(to bottom, #0074E4, #00A6FB);
 }
+
 
 
 
@@ -247,3 +248,5 @@ body {
             background: var(--clr); /*color boton*/
             box-shadow: 0 0 30px var(--clr); /*color fondo uwu*/
         }
+
+
