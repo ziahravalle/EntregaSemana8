@@ -12,5 +12,9 @@ namespace EntregaSemana8.Controllers
         {
             return View();
         }
+        public IActionResult Carrito()
+        {
+            return View();
+        }
     }
 }
