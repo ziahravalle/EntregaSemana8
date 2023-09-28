@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
+                <form id="carrito" class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
@@ -62,7 +62,7 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">TIENDITA UCHILL</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                <p class="lead fw-normal text-white-50 mb-0">Disfruta mientras luchas contra el ciclo!</p>
             </div>
         </div>
     </header>
@@ -85,7 +85,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">View options</a></div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">View options</a></div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +235,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -262,7 +262,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/Producto/VerProducto">Add to cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -288,4 +288,12 @@
             });
         });
     });
+    const carrito = document.getElementById('carrito');
+    carrito.addEventListener('click', function (e) {
+        // Evita el envío del formulario predeterminado
+        e.preventDefault();
+        // Redirige a la página de producto/VerProducto
+        window.location.href = '/Producto/Carrito';
+    });
+
 </script>
