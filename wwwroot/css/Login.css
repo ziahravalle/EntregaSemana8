@@ -7,34 +7,24 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/*--------------GUÍA u.u--------------*/
-/*--------------/ .body--------------*/
-/*--------------CONTEINER-------------*/
-/*--------------/ .conteiner--------------*/
-/*--------------BOX-------------------*/
-/*---------------------------*/
 
-body {
-    /*display flex, ayuda a colocar las cajas como si fueran celdas de tablas*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /*tamaño*/
-    background: linear-gradient(to bottom, #0074E4, #00A6FB);
-}
+        body {
+            /*display flex, ayuda a colocar las cajas como si fueran celdas de tablas*/
+            display: flex;
+            justify-content: center;
+            margin: 150px 500px;
+            background: #192a56;
+        }
 
-
-
-
-/*-------------------------CLASS BOX-----------------------*/
-.box {
-    position: relative;
-    width: 400px; /*ancho*/
-    height: 400px; /*altura*/
-    background: #fdfdff;
-    border-radius: 10px;
-    overflow: hidden;
-}
+    /*-------------------------CLASS BOX-----------------------*/
+       .box {
+            position: relative;
+            width: 700px; /*ancho*/
+            height: 700px; /*altura*/
+            background: #fdfdff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
 
     /*--------ANTES--------------------------------------------------*/
@@ -210,7 +200,7 @@ body {
             text-decoration: none;
         }
 
-            /*-------------------------CLASS BOX->FROM ->LINKS-> A----------------------------------------------------------*/
+           /*-------------------------CLASS BOX->FROM ->LINKS-> A----------------------------------------------------------*/
             .box form .links a:hover /*alteración del aspecto de interfaz gráfica una vez que se posa el ratón sobre él
                          aunque no haya sido seleccionado.*/
             .box form .links a:nth-child(2) {
@@ -219,7 +209,7 @@ body {
 
 
     /*--------------------------BOTON---------------------------------*/
-    .box form input[type ="submit"] {
+      .box form input[type ="submit"] {
         display: block;
         margin-left: auto;
         margin-right: auto;
