@@ -31,13 +31,13 @@ public partial class BdInfochill : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-AMUJTOVV\\SQLEXPRESS;Initial Catalog=INFOCHILL;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-JOELSPI\\SQLEXPRESS;Initial Catalog=INFOCHILL;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TbCliente>(entity =>
         {
-            entity.HasKey(e => e.CodCliente).HasName("PK__TB_CLIEN__39F43E9263506E76");
+            entity.HasKey(e => e.CodCliente).HasName("PK__TB_CLIEN__39F43E9260F063FA");
 
             entity.ToTable("TB_CLIENTE");
 
@@ -72,16 +72,16 @@ public partial class BdInfochill : DbContext
 
             entity.HasOne(d => d.IdProductoNavigation).WithMany()
                 .HasForeignKey(d => d.IdProducto)
-                .HasConstraintName("FK__TB_DETALL__IdPro__3F466844");
+                .HasConstraintName("FK__TB_DETALL__IdPro__5165187F");
 
             entity.HasOne(d => d.IdVentaNavigation).WithMany()
                 .HasForeignKey(d => d.IdVenta)
-                .HasConstraintName("FK__TB_DETALL__IdVen__3E52440B");
+                .HasConstraintName("FK__TB_DETALL__IdVen__5070F446");
         });
 
         modelBuilder.Entity<TbProducto>(entity =>
         {
-            entity.HasKey(e => e.IdPro).HasName("PK__TB_PRODU__3D795B278F94B00F");
+            entity.HasKey(e => e.IdPro).HasName("PK__TB_PRODU__3D795B2747137192");
 
             entity.ToTable("TB_PRODUCTO");
 
@@ -107,7 +107,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbProveedor>(entity =>
         {
-            entity.HasKey(e => e.CodProveedor).HasName("PK__TB_PROVE__26E566FBDF6AD6AA");
+            entity.HasKey(e => e.CodProveedor).HasName("PK__TB_PROVE__26E566FB4A679C8A");
 
             entity.ToTable("TB_PROVEEDOR");
 
@@ -129,7 +129,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbTrabajador>(entity =>
         {
-            entity.HasKey(e => e.CodTrabaj).HasName("PK__TB_TRABA__40C66A9553EA31AC");
+            entity.HasKey(e => e.CodTrabaj).HasName("PK__TB_TRABA__40C66A9537E252E7");
 
             entity.ToTable("TB_TRABAJADOR");
 
@@ -168,12 +168,12 @@ public partial class BdInfochill : DbContext
 
             entity.HasOne(d => d.UsuUsuarioNavigation).WithMany()
                 .HasForeignKey(d => d.UsuUsuario)
-                .HasConstraintName("FK__TB_USUARI__UsuUs__412EB0B6");
+                .HasConstraintName("FK__TB_USUARI__UsuUs__534D60F1");
         });
 
         modelBuilder.Entity<TbVentum>(entity =>
         {
-            entity.HasKey(e => e.IdVenta).HasName("PK__TB_VENTA__077D56145194EC33");
+            entity.HasKey(e => e.IdVenta).HasName("PK__TB_VENTA__077D5614FB202A2D");
 
             entity.ToTable("TB_VENTA");
 
@@ -195,7 +195,7 @@ public partial class BdInfochill : DbContext
 
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.TbVenta)
                 .HasForeignKey(d => d.IdCliente)
-                .HasConstraintName("FK__TB_VENTA__idClie__3B75D760");
+                .HasConstraintName("FK__TB_VENTA__idClie__4D94879B");
         });
 
         OnModelCreatingPartial(modelBuilder);

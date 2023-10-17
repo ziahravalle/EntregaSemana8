@@ -1,7 +1,12 @@
+using EntregaSemana8.Service.Interface;
+using EntregaSemana8.Service.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Add(new ServiceDescriptor(typeof(IUsuario), new UsuarioRepository()));
+builder.Services.Add(new ServiceDescriptor(typeof(IAdmin), new AdminRepository()));
 
 var app = builder.Build();
 
@@ -22,6 +27,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Admin}/{action=index}/{id?}");
+    pattern: "{controller=Usuario}/{action=index}/{id?}");
 
 app.Run();

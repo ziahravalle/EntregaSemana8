@@ -6,7 +6,7 @@
 }
 <html>
     <body>
-    <form asp-controller="Admin" asp-action="agregarProductos" method="post"></form>
+        <form asp-asp-controller="Admin" asp-action="EditDetails"></form>
             <div class="form-group">
                 <label for="formGroupExampleInput">Id</label>
                 <input asp-for="IdPro" class="form-control" id="formGroupExampleInput" placeholder="Id">
@@ -27,8 +27,8 @@
 
             <div class="form-group">
                 <label for="formGroupExampleInput2">Stock actual</label>
-                    <input asp-for="StkAct" class="form-control" id="formGroupExampleInput2" placeholder="Stock actual">
-                    <span asp-validation-for="StkAct" class="text-danger"></span>
+                <input asp-for="StkAct" class="form-control" id="formGroupExampleInput2" placeholder="Stock actual">
+                <span asp-validation-for="StkAct" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -37,14 +37,15 @@
                 <span asp-validation-for="StkMin" class="text-danger"></span>
             </div>
 
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Categoria de producto</label>
-            <input asp-for="CatePro" class="form-control" id="formGroupExampleInput2" placeholder="Categoria de producto">
-            <span asp-validation-for="CatePro" class="text-danger"></span>
-        </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Categoria de producto</label>
+                <input asp-for="CatePro" class="form-control" id="formGroupExampleInput2" placeholder="Categoria de producto">
+                <span asp-validation-for="CatePro" class="text-danger"></span>
+            </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary" value="btn" name="agregarProductos" data-toggle="modal" data-target="#exampleModal">Grabar</button>
+                <button type="submit" class="btn btn-primary" value="btn" name="editar" data-toggle="modal" data-target="#exampleModal">Modificar</button>
             </div>
     </body>
 </html>
+

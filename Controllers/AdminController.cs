@@ -1,9 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntregaSemana8.Models;
+using Microsoft.AspNetCore.Mvc;
+using EntregaSemana8.Service.Interface;
+using EntregaSemana8.Service.Repository;
 
 namespace EntregaSemana8.Controllers
 {
     public class AdminController : Controller
     {
+        private readonly IAdmin obj;
+
+        public AdminController(IAdmin adminObj) { 
+            obj=adminObj;
+        }
         public IActionResult Index()
         {
             return View();
@@ -25,9 +33,38 @@ namespace EntregaSemana8.Controllers
             return View();
         }
 
-        public IActionResult agregarProductos()
+       // [Route("Admin/listarProductos")]
+        public IActionResult listarProductos()
         {
-            return View();
+            return View(obj.GetAllProductos());
+        }
+
+
+        //[Route("Admin/agregarProductos/{cod}")]
+        public IActionResult agregarProductos(TbProducto producto)
+        {
+            obj.Add(producto);
+            return RedirectToAction("agregarProductos");
+        }
+
+
+        [Route("Admin/editarProductos/{cod}")]
+        public IActionResult editarProductos(string cod)
+        {
+            return View(obj.GetProducto(cod));
+        }
+
+
+        [Route("Admin/eliminarProductos/{cod}")]
+        public IActionResult eliminarProductos(string cod)
+        {
+            return RedirectToAction("Listar");
+        }
+
+        public IActionResult EditDetails(TbProducto tbProducto)
+        {
+            obj.Update(tbProducto);
+            return RedirectToAction("listarProductos");
         }
 
         //clientes productos proveedores trabajadores
