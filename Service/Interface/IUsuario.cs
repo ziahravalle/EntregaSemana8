@@ -1,7 +1,9 @@
-﻿namespace EntregaSemana8.Service.Interface
+﻿using EntregaSemana8.Models;
+
+namespace EntregaSemana8.Service.Interface
 {
     public interface IUsuario
     {
-        Usuario getValidarUsuario(Usuario usuario);
+        TbUsuario getValidarUsuario(TbUsuario usuario);
     }
 }
