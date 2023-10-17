@@ -15,7 +15,5 @@ public partial class TbProducto
 
     public int? StkMin { get; set; }
 
-    public int? CantCompra { get; set; }
-
     public string? CatePro { get; set; }
 }

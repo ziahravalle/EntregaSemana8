@@ -21,5 +21,5 @@ public partial class TbVentum
 
     public DateTime? FechaVenta { get; set; }
 
-    public virtual TbAlumno? IdClienteNavigation { get; set; }
+    public virtual TbCliente? IdClienteNavigation { get; set; }
 }
