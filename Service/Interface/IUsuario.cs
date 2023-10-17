@@ -2,7 +2,6 @@
 {
     public interface IUsuario
     {
-
-
+        Usuario getValidarUsuario(Usuario usuario);
     }
 }
