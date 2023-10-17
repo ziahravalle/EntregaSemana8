@@ -8,5 +8,10 @@ namespace EntregaSemana8.Controllers
         {
             return View();
         }
+        public IActionResult Validar()
+        {
+            return View();
+        }
     }
+
 }
