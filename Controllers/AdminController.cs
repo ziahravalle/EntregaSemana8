@@ -25,6 +25,11 @@ namespace EntregaSemana8.Controllers
             return View();
         }
 
+        public IActionResult agregarProductos()
+        {
+            return View();
+        }
+
         //clientes productos proveedores trabajadores
     }
 }
