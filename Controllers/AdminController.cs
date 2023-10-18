@@ -33,18 +33,18 @@ namespace EntregaSemana8.Controllers
             return View();
         }
 
-       // [Route("Admin/listarProductos")]
+       [Route("Admin/listarProductos")]
         public IActionResult listarProductos()
         {
             return View(obj.GetAllProductos());
         }
 
 
-        //[Route("Admin/agregarProductos")]
-        public IActionResult agregarProductos(TbProducto producto)
+        [Route("Admin/Grabar")]
+        public IActionResult agregarProducto(TbProducto producto)
         {
             obj.Add(producto);
-            return RedirectToAction("agregarProductos");
+            return RedirectToAction("Grabar");
         }
 
 
