@@ -51,6 +51,7 @@ namespace EntregaSemana8.Controllers
         [Route("Producto/Delete/{cod}")]
         public IActionResult Delete(string cod)
         {
+            obj.Delete(cod);
             return RedirectToAction("Listar");
         }
 

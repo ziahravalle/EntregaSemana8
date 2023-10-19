@@ -6,47 +6,49 @@ namespace EntregaSemana8.Controllers
 {
     public class ProveedorController : Controller
     {
-        private readonly IProveedores objProv;
+        private readonly IProveedores objP;
+
+        public ProveedorController(IProveedores proveedorObj)
+        {
+            objP = proveedorObj;
+        }
         public IActionResult Index()
         {
             return View();
         }
 
 
-        //LISTAR
-        [Route("Proveedor/listar")]
+        [Route("proveedor/listar")]
         public IActionResult Listar()
         {
-            return View(objProv.GetAllProveedores());
+            return View(objP.GetAllProveedores());
         }
 
-
-        //GRABAR
-        public IActionResult Grabar(TbProveedor proveedor)
+        [Route("proveedor/grabar")]
+        public IActionResult Grabar(TbProveedor provee)
         {
-            objProv.Add(proveedor);
+            objP.Add(provee);
+            //return View("Producto");
             return RedirectToAction("Listar");
         }
 
 
-        //EDIT
-        [Route("Proveedor/Edit/{cod}")]
+        [Route("proveedor/Edit/{cod}")]
         public IActionResult Edit(int cod)
         {
-            return View(objProv.GetProveedor(cod));
+            return View(objP.GetProveedor(cod));
         }
-        public IActionResult EditDetails(TbProveedor tbProveedor)
+
+        [Route("proveedor/Delete/{cod}")]
+        public IActionResult Delete(int cod)
         {
-            objProv.Update(tbProveedor);
+            objP.Delete(cod);
             return RedirectToAction("Listar");
         }
 
-
-        //DELETE
-        [Route("Proveedor/Delete/{cod}")]
-        public IActionResult Delete(int cod)
+        public IActionResult EditDetails(TbProveedor tbprovee)
         {
-            objProv.Delete(cod);
+            objP.Update(tbprovee);
             return RedirectToAction("Listar");
         }
 
