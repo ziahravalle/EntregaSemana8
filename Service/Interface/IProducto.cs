@@ -4,7 +4,10 @@ namespace EntregaSemana8.Service.Interface
 {
     public interface IProducto
     {
-        //IEnumerable<TbProducto> GetAllProductos();
-        //void Add(TbProducto producto);
+        IEnumerable<TbProducto> GetAllProductos();
+        void Add(TbProducto producto);
+        void Update(TbProducto producto);
+        void Delete(string id);
+        TbProducto GetProducto(string id);
     }
 }

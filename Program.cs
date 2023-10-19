@@ -5,9 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.Add(new ServiceDescriptor(typeof(IUsuario), new UsuarioRepository()));
 builder.Services.Add(new ServiceDescriptor(typeof(IAdmin), new AdminRepository()));
-
+builder.Services.Add(new ServiceDescriptor(typeof(IUsuario), new UsuarioRepository()));
+builder.Services.Add(new ServiceDescriptor(typeof(IProducto), new ProductoRepository()));
+builder.Services.Add(new ServiceDescriptor(typeof(IProveedores), new ProveedorRepository()));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Admin}/{action=index}/{id?}");
+    pattern: "{controller=Admin}/{action=Index}/{id?}");
 
 app.Run();
