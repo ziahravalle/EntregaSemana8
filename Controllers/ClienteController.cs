@@ -1,0 +1,54 @@
+﻿using EntregaSemana8.Models;
+using EntregaSemana8.Service.Interface;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EntregaSemana8.Controllers
+{
+    public class ClienteController : Controller
+    {
+        private readonly ICliente objCliente;
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        //LISTAR
+        [Route("cliente/listar")]
+        public IActionResult Listar()
+        {
+            return View(objCliente.GetAllClientes());
+        }
+
+
+        //GRABAR
+        public IActionResult Grabar(TbCliente cliente)
+        {
+            objCliente.Add(cliente);
+            return RedirectToAction("Listar");
+        }
+
+
+        //EDIT
+        [Route("Cliente/Edit/{cod}")]
+        public IActionResult Edit(int cod)
+        {
+            return View(objCliente.GetCliente(cod));
+        }
+        public IActionResult EditDetails(TbCliente tbCliente)
+        {
+            objCliente.Update(tbCliente);
+            return RedirectToAction("Listar");
+        }
+
+
+        //DELETE
+        [Route("Cliente/Delete/{cod}")]
+        public IActionResult Delete(int cod)
+        {
+            objCliente.Delete(cod);
+            return RedirectToAction("Listar");
+        }
+
+    }
+}

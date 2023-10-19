@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html Lang="en">
+<head>
+    <meta charset="UFT-8">
+    <title>Codigo Validacion</title>
+    <link rel="stylesheet" type="text/css" href="~/css/validar.css">
+
+</head>
+<body>
+    <div class="box">
+        <span class="border"></span>
+        <form id="loginForm">
+            <!----------------------------------SIGN IN------------------------------------------->
+            <h2>Validar Codigo</h2>
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Validar Codigo Alumno</span>
+                <i></i>
+            </div>
+            <!------------------------------BOTON ENTRAR------------------------------------------->
+            <input type="submit" style="--clr:#fbff00" value="Entrar" href="/Usuario/CrearContraseña">
+
+
+
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    // Obtén el formulario por su id
+    const loginForm = document.getElementById('loginForm');
+
+    // Agrega un evento para escuchar el envío del formulario
+    loginForm.addEventListener('submit', function (e) {
+        // Evita el envío del formulario predeterminado
+        e.preventDefault();
+
+        // Redirige a la página de producto/index
+        window.location.href = '/producto/index';
+    });
+</script>
