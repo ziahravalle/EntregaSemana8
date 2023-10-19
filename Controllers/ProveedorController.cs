@@ -14,7 +14,7 @@ namespace EntregaSemana8.Controllers
 
 
         //LISTAR
-        [Route("cliente/listar")]
+        [Route("proveedor/listar")]
         public IActionResult Listar()
         {
             return View(objProv.GetAllProveedores());
@@ -30,7 +30,7 @@ namespace EntregaSemana8.Controllers
 
 
         //EDIT
-        [Route("Cliente/Edit/{cod}")]
+        [Route("proveedor/Edit/{cod}")]
         public IActionResult Edit(int cod)
         {
             return View(objProv.GetProveedor(cod));
@@ -43,7 +43,7 @@ namespace EntregaSemana8.Controllers
 
 
         //DELETE
-        [Route("Cliente/Delete/{cod}")]
+        [Route("proveedor/Delete/{cod}")]
         public IActionResult Delete(int cod)
         {
             objProv.Delete(cod);
