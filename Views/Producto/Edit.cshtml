@@ -6,10 +6,9 @@
 }
 <html>
 <body>
-    <form asp-asp-controller="Producto" asp-action="EditDetails">
+    <form asp-asp-controller="Producto" asp-action="EditDetails" method="post">
         <div class="form-group">
-            <label for="formGroupExampleInput">Id</label>
-            <input asp-for="IdPro" class="form-control" id="formGroupExampleInput" placeholder="Id">
+            <input asp-for="IdPro" class="form-control" id="formGroupExampleInput" placeholder="Id" type="hidden">
             <span asp-validation-for="IdPro" class="text-danger"></span>
         </div>
 

@@ -33,7 +33,7 @@ namespace EntregaSemana8.Controllers
             return View(obj.GetAllProductos());
         }
 
-        //[Route("producto/grabar")]
+        [Route("producto/grabar")]
         public IActionResult Grabar(TbProducto producto)
         {
             obj.Add(producto);
@@ -48,17 +48,17 @@ namespace EntregaSemana8.Controllers
             return View(obj.GetProducto(cod));
         }
 
+        [Route("Producto/Delete/{cod}")]
+        public IActionResult Delete(string cod)
+        {
+            return RedirectToAction("Listar");
+        }
+
         public IActionResult EditDetails(TbProducto tbProducto)
         {
             obj.Update(tbProducto);
             return RedirectToAction("Listar");
         }
 
-
-        [Route("Producto/Delete/{cod}")]
-        public IActionResult Delete(string cod)
-        {
-            return RedirectToAction("Listar");
-        }
     }
 }
