@@ -37,7 +37,7 @@ public partial class BdInfochill : DbContext
     {
         modelBuilder.Entity<TbCliente>(entity =>
         {
-            entity.HasKey(e => e.CodCliente).HasName("PK__TB_CLIEN__39F43E9260F063FA");
+            entity.HasKey(e => e.CodCliente).HasName("PK__TB_CLIEN__39F43E92948BFC5F");
 
             entity.ToTable("TB_CLIENTE");
 
@@ -81,7 +81,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbProducto>(entity =>
         {
-            entity.HasKey(e => e.IdPro).HasName("PK__TB_PRODU__3D795B2747137192");
+            entity.HasKey(e => e.IdPro).HasName("PK__TB_PRODU__3D795B27A51D2565");
 
             entity.ToTable("TB_PRODUCTO");
 
@@ -107,7 +107,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbProveedor>(entity =>
         {
-            entity.HasKey(e => e.CodProveedor).HasName("PK__TB_PROVE__26E566FB4A679C8A");
+            entity.HasKey(e => e.CodProveedor).HasName("PK__TB_PROVE__26E566FB6D5DCEAF");
 
             entity.ToTable("TB_PROVEEDOR");
 
@@ -129,7 +129,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbTrabajador>(entity =>
         {
-            entity.HasKey(e => e.CodTrabaj).HasName("PK__TB_TRABA__40C66A9537E252E7");
+            entity.HasKey(e => e.CodTrabaj).HasName("PK__TB_TRABA__40C66A9546FB496E");
 
             entity.ToTable("TB_TRABAJADOR");
 
@@ -173,7 +173,7 @@ public partial class BdInfochill : DbContext
 
         modelBuilder.Entity<TbVentum>(entity =>
         {
-            entity.HasKey(e => e.IdVenta).HasName("PK__TB_VENTA__077D5614FB202A2D");
+            entity.HasKey(e => e.IdVenta).HasName("PK__TB_VENTA__077D5614988CBBB7");
 
             entity.ToTable("TB_VENTA");
 

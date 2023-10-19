@@ -40,11 +40,11 @@ namespace EntregaSemana8.Controllers
         }
 
 
-        [Route("Admin/Grabar")]
+        [Route("Admin/agregarProducto")]
         public IActionResult agregarProducto(TbProducto producto)
         {
             obj.Add(producto);
-            return RedirectToAction("Grabar");
+            return RedirectToAction("agregarProducto");
         }
 
 
