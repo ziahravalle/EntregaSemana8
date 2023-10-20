@@ -12,8 +12,9 @@ namespace EntregaSemana8.Controllers
         {
             objP = proveedorObj;
         }
-        public IActionResult Index()
+        public IActionResult Index(TbProveedor provee)
         {
+            objP.Add(provee);
             return View();
         }
 
@@ -51,6 +52,10 @@ namespace EntregaSemana8.Controllers
             objP.Update(tbprovee);
             return RedirectToAction("Listar");
         }
+      
+
+
+            
 
     }
 }
